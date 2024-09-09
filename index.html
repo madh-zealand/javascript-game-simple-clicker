@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My HTML5 Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #clickerButton {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #clickerButton:hover {
+            background-color: #45a049;
+        }
+
+        #scoreDisplay {
+            font-size: 24px;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+    
+</head>
+<body>
+    <button id="clickerButton">
+        Click me!
+    </button>
+    <p id="scoreDisplay">
+        Score: 0
+    </p>
+
+    <script>
+        let score = 0;
+        const scoreDisplay = document.getElementById('scoreDisplay');
+
+        function increaseScore() {
+            score++;
+            scoreDisplay.textContent = 'Score: ' + score;
+        }
+
+        document
+            .getElementById('clickerButton')
+            .addEventListener('click', increaseScore);
+    </script>
+</body>
+</html>
